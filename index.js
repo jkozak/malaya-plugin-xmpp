@@ -70,8 +70,10 @@ exports.init = malaya=>{
                 throw new Error(`NYI`);
                 break;
             case 'stanza': {
+                const  pl = this;
                 const xml = (new xml2js.Builder()).buildObject(js[1]);
-                pl.client.send(xml.split('\n').slice(1));
+                if (!pl.disable)
+                    pl.client.send(xml.split('\n').slice(1)); // discard DTD
                 break;
             }
             default:
