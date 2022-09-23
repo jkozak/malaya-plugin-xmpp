@@ -1,0 +1,3 @@
+* Malaya plugin for XMPP
+
+WIP, don't use this yet.
