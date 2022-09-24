@@ -1,10 +1,6 @@
 "use strict";
 
-console.log(`*** x.0`);
-
 exports.init = malaya=>{
-    console.log(`*** x.1`);
-
     const  plugin = malaya.plugin;
     const {client,
              xml} = require('@xmpp/client');
@@ -81,6 +77,4 @@ exports.init = malaya=>{
             }
         }
     });
-
-    console.log(`*** x.n`);
 };
