@@ -69,7 +69,12 @@ exports.init = malaya=>{
                 const  pl = this;
                 const xml = (new xml2js.Builder()).buildObject(js[1]);
                 if (!pl.disable)
-                    pl.client.send(xml.split('\n').slice(1)); // discard DTD
+                    try {
+                        pl.client.send(xml.split('\n').slice(1)); // discard DTD
+                    } catch (e) {
+                        console.log(`*** xmpp send fails: ${e.message}`);
+                        // +++ error msg to malaya +++
+                    }
                 break;
             }
             default:
